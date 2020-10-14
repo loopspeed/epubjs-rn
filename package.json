@@ -1,8 +1,8 @@
 {
   "name": "@loopspeed/epubjs-rn",
-  "version": "0.2.39",
+  "version": "0.2.40",
   "repository": "https://github.com/loopspeed/epubjs-rn",
-  "main": "./src/index.js",
+  "main": "./components/index.js",
   "private": false,
   "scripts": {
     "start": "node EpubReader/node_modules/react-native/local-cli/cli.js start",
