@@ -1,39 +1,21 @@
 import React, { Component } from "react";
-
-import {
-  StyleSheet,
-  View,
-  ActivityIndicator,
-  Dimensions,
-  AppState,
-  WebView,
-} from "react-native";
-
+import { StyleSheet, Dimensions, AppState } from "react-native";
 import Orientation from "@lightbase/react-native-orientation";
-
 import RNFetchBlob from "rn-fetch-blob";
-
 import AsyncStorage from "@react-native-community/async-storage";
+import ePub from "epubjs";
+import Rendition from "./Rendition";
 
 if (!global.Blob) {
   global.Blob = RNFetchBlob.polyfill.Blob;
 }
 
 global.JSZip = global.JSZip || require("jszip");
-
 global.URL = require("epubjs/libs/url/url-polyfill.js");
 
 if (!global.btoa) {
   global.btoa = require("base-64").encode;
 }
-
-import ePub, { Layout, EpubCFI } from "epubjs";
-
-const core = require("epubjs/lib/utils/core");
-const Uri = require("epubjs/lib/utils/url");
-const Path = require("epubjs/lib/utils/path");
-
-import Rendition from "./Rendition";
 
 class Epub extends Component {
   constructor(props) {
@@ -288,13 +270,13 @@ class Epub extends Component {
     });
   }
 
-  onRelocated(visibleLocation, rendition) {
+  onRelocated = (visibleLocation, rendition) => {
     this._visibleLocation = visibleLocation;
 
     if (this.props.onLocationChange) {
-      this.props.onLocationChange(visibleLocation, rendition);
+      this.props.onLocationChange(visibleLocation, this.rendition);
     }
-  }
+  };
 
   visibleLocation() {
     return this._visibleLocation;
@@ -353,7 +335,8 @@ class Epub extends Component {
         fontSize={this.props.fontSize}
         font={this.props.font}
         display={this.props.location}
-        onRelocated={this.onRelocated.bind(this)}
+        onRelocated={this.onRelocated}
+        onRendered={this.props.onRendered}
         orientation={this.state.orientation}
         backgroundColor={this.props.backgroundColor}
         onError={this.props.onError}

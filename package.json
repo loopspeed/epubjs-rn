@@ -1,6 +1,6 @@
 {
   "name": "@loopspeed/epubjs-rn",
-  "version": "0.2.41",
+  "version": "0.2.77",
   "repository": "https://github.com/loopspeed/epubjs-rn",
   "main": "./components/index.js",
   "private": false,
@@ -10,7 +10,7 @@
     "build": "./node_modules/.bin/babel src/ -d components/",
     "watch": "./node_modules/.bin/babel src/ -d components/ -w",
     "local": "./node_modules/.bin/gulp watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "yarn build"
   },
   "license": "BSD-2-Clause",
   "dependencies": {
@@ -44,13 +44,13 @@
     "@babel/core": "7.9.6",
     "@babel/preset-env": "7.9.6",
     "@babel/runtime": "7.9.6",
+    "babel-jest": "24.8.0",
     "babel-plugin-module-resolver": "4.0.0",
     "babel-plugin-static-fs": "3.0.0",
     "babel-plugin-transform-inline-environment-variables": "0.4.3",
     "gulp": "4.0.2",
-    "metro-react-native-babel-preset": "0.59.0",
-    "babel-jest": "24.8.0",
     "jest": "24.8.0",
+    "metro-react-native-babel-preset": "0.59.0",
     "react-test-renderer": "16.11.0"
   },
   "files": [

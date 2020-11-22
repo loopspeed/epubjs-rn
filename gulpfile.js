@@ -7,22 +7,27 @@ var gulp = require("gulp");
 // };
 
 function copy() {
-	return gulp.src(['./components/**/*.js'])
-		.pipe(gulp.dest("./EpubReader/node_modules/epubjs-rn/components"));
+  return gulp
+    .src(["./components/**/*.js"])
+    .pipe(
+      gulp.dest("./EpubReader/node_modules/@loopspeed/epubjs-rn/components")
+    );
 }
 
 function copyPackage() {
-	return gulp.src(['./package.json'])
-		.pipe(gulp.dest("./EpubReader/node_modules/epubjs-rn"));
+  return gulp
+    .src(["./package.json"])
+    .pipe(gulp.dest("./EpubReader/node_modules/@loopspeed/epubjs-rn"));
 }
 
 function copyEpubjs() {
-	return gulp.src(['../epub.js/lib/**/*.js'])
-		.pipe(gulp.dest("./EpubReader/node_modules/epubjs/lib"));
+  return gulp
+    .src(["../epub.js/lib/**/*.js"])
+    .pipe(gulp.dest("./EpubReader/node_modules/epubjs/lib"));
 }
 
 function watch() {
-	return gulp.watch('./components/**/*.js', gulp.parallel(copy, copyPackage));
+  return gulp.watch("./components/**/*.js", gulp.parallel(copy, copyPackage));
 }
 
 exports.watch = watch;
