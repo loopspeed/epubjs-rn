@@ -6,7 +6,7 @@ process.env.POLYFILL = fs.readFileSync(
   "utf8"
 );
 process.env.EPUBJS = fs.readFileSync(
-  path.resolve(__dirname, "node_modules/epubjs/dist/epub.min.js"),
+  path.resolve(__dirname, "node_modules/loopspeed-epubjs/dist/epub.min.js"),
   "utf8"
 );
 process.env.BRIDGE = fs.readFileSync(

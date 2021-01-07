@@ -14,7 +14,7 @@ if (!global.Blob) {
   global.Blob = RNFetchBlob.polyfill.Blob;
 }
 
-const Uri = require("epubjs/lib/utils/url");
+const Uri = require("loopspeed-epubjs/lib/utils/url");
 
 class EpubStreamer {
   constructor(opts) {
@@ -77,7 +77,7 @@ class EpubStreamer {
   }
 
   add(bookUrl) {
-    let uri = new Uri(bookUrl);
+    let uri = new Uri.default(bookUrl);
     const filename = this.filename(bookUrl);
 
     return RNFetchBlob.config({
@@ -122,7 +122,7 @@ class EpubStreamer {
   }
 
   filename(bookUrl) {
-    let uri = new Uri(bookUrl);
+    let uri = new Uri.default(bookUrl);
     let finalFileName;
     if (uri.filename.indexOf("?") > -1) {
       finalFileName = uri.filename.split("?")[0].replace(".epub", "");

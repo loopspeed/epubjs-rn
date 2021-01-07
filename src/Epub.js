@@ -3,7 +3,7 @@ import { StyleSheet, Dimensions, AppState } from "react-native";
 import Orientation from "@lightbase/react-native-orientation";
 import RNFetchBlob from "rn-fetch-blob";
 import AsyncStorage from "@react-native-community/async-storage";
-import ePub from "epubjs";
+import ePub from "loopspeed-epubjs";
 import Rendition from "./Rendition";
 
 if (!global.Blob) {
@@ -11,7 +11,7 @@ if (!global.Blob) {
 }
 
 global.JSZip = global.JSZip || require("jszip");
-global.URL = require("epubjs/libs/url/url-polyfill.js");
+global.URL = require("loopspeed-epubjs/libs/url/url-polyfill.js");
 
 if (!global.btoa) {
   global.btoa = require("base-64").encode;

@@ -23,7 +23,7 @@ function copyPackage() {
 function copyEpubjs() {
   return gulp
     .src(["../epub.js/lib/**/*.js"])
-    .pipe(gulp.dest("./EpubReader/node_modules/epubjs/lib"));
+    .pipe(gulp.dest("./EpubReader/node_modules/loopspeed-epubjs/lib"));
 }
 
 function watch() {
