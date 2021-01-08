@@ -167,6 +167,17 @@ window.onerror = function (message, file, line, col, error) {
           }
           break;
         }
+        case "unhighlight": {
+          if (rendition) {
+            rendition.annotations.unhighlight.apply(
+              rendition.annotations,
+              decoded.args
+            );
+          } else {
+            q.push(message);
+          }
+          break;
+        }
         case "removeAnnotation": {
           if (rendition) {
             rendition.annotations.remove.apply(

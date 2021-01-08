@@ -1,6 +1,6 @@
 {
   "name": "@loopspeed/epubjs-rn",
-  "version": "0.2.93",
+  "version": "0.3.0",
   "repository": "https://github.com/loopspeed/epubjs-rn",
   "main": "./components/index.js",
   "private": false,
@@ -23,7 +23,7 @@
     "i": "0.3.6",
     "jszip": "3.4.0",
     "lodash": "4.17.15",
-    "loopspeed-epubjs": "0.3.90",
+    "loopspeed-epubjs": "0.3.95",
     "path-webpack": "0.0.3",
     "react": "16.11.0",
     "react-native": "0.62.2",

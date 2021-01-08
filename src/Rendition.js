@@ -245,6 +245,7 @@ class Rendition extends Component {
 
   unhighlight(cfiRange) {
     this.sendToBridge("removeAnnotation", [cfiRange, "highlight"]);
+    // this.sendToBridge("unhighlight", [cfiRange]);
   }
 
   ununderline(cfiRange) {
